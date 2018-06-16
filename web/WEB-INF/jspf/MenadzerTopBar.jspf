@@ -1,0 +1,27 @@
+   <body onload="loading()">
+        
+<div class="top_bar">
+    <a href = "index.jsp"><div class="logo"></div></a>  
+
+    <div class="main_menu" id="menadzer_main_menu">
+        <a href="Menadzer.jsp"><div class="main_menu_item"><p id="main_home" class="main_menu_link_admin">HOME</p></div></a>
+        <a href="Menadzer.jsp"><div class="main_menu_item"><p class="main_menu_link_admin duzi">PROJEKCIJE</p></div></a>
+             
+        <form name="logout_menadzer" id="log_out_menadzer" method="get" action="Login_servlet">
+            <button id="log_out_div_menadzer" class="main_menu_item main_menu_item_button">LOGOUT
+            </button>
+        </form>
+      
+        <%!String userName;%>
+            <%
+                HttpSession sesija= request.getSession();
+                userName=(String)sesija.getAttribute("user");
+                if(userName !=null){                                     
+            %>  
+        <div id="user_name_d" class="main_menu_item_user"><p id="user_name_p" class="main_menu_link_user"><%=userName%></p></div>
+        <%}else if(userName ==null){%>
+        <div id="user_name_d" class="main_menu_item_user"><p id="user_name_p" class="main_menu_link_user">GOST</p></div>
+        <%}%>
+    </div>
+</div>
+</body>

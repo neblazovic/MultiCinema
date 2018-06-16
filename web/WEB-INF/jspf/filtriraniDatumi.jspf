@@ -1,0 +1,65 @@
+
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.ResultSet"%>  
+<%@page import="java.sql.Driver"%> 
+<sql:setDataSource var="bioskop" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/multiCinema"
+    user="root" password="" />
+     <c:set var="query" value="SELECT * FROM projekcija where 1"/>
+        <c:choose>
+            <c:when test="${requestScope.film ne null} ">        
+            </c:when>   
+        </c:choose> 
+        <c:choose>
+             <c:when test="${requestScope.bioskop ne null} ">
+               <c:set var="query">
+                    ${query}+"and idbioskopa =?"
+            
+                 </c:set>
+             </c:when>
+        </c:choose>
+        <c:choose>
+            <c:when test="${requestScope.datum ne null} ">
+                 <c:set var="query">
+                      ${query}+"and idfilma =?"
+        
+                     ${query}+"and idProjekcije = ?"
+        
+                 </c:set>
+            </c:when>
+        </c:choose>        
+        <c:choose>
+            <c:when test="${requestScope.tehnika ne null} ">
+                <c:set var="query">
+                     ${query}+"and idtehnologije = ?"
+                </c:set>
+            </c:when>
+        </c:choose>
+            <sql:query dataSource="${bioskop}" var="sveProjekcijeFilma"    
+                         sql="${query}">
+    
+                <c:set var="query" value="${query}+'and idfilma =?'"></c:set>
+            </sql:query>
+                <div class="div_horizontal_pro">
+                  <div class="div_vertical_pro">
+                    <c:set var="poz" value="0"/>
+                         <c:forEach var="p" items="${sveProjekcijeFilma.rows}">                        
+                           <input type="text" id="${p.idprojekcije}" value="${p.datumprojekcije}">
+                             <c:choose>
+                                <c:when test="${poz eq '0' or poz eq '1'}">
+                                  <c:set var="poz" value="${poz}+'1'"/>
+                                </c:when>
+                                
+                                <c:otherwise >
+                                    </div>
+                                    <div class="div_vertical_pro">
+                                    <c:set var="poz" value="0"/>
+                                </c:otherwise>
+                            </c:choose>
+                    </c:forEach>
+            </div>
+            </div>
+        

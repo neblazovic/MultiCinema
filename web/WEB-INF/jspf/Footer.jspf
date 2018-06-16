@@ -1,0 +1,11 @@
+
+<hr/><div id="footer" class="pozadina_gradient1">
+    <div id ="footer_menu">
+        <a href="index.jsp"><div class="main_menu_item"><p  class="footer_menu_link_k">HOME</p></div></a>
+        <div class="main_menu_item"><p  id="footer_film" class="footer_menu_link_k">FILM</p></div>
+        <div class="main_menu_item"><p id="footer_bioskop" class="footer_menu_link_d">BIOSKOP</p></div>
+        <div class="main_menu_item"><p  id="footer_klub" class="footer_menu_link_k">KLUB</p></div>    
+        
+    </div>    
+        <p class="footerText">Copyright © 2017  Nebojsa Lazovic<p>
+    </div>

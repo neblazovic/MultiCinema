@@ -1,0 +1,46 @@
+ 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<div class="top_bar">
+    <a href = "index.jsp"><div class="logo"></div></a>
+    <div id="hover_menu">
+        <p id="natpis">Rezervacija karata</p>
+        <a href="#" ><div class="hover_menu_item"><p id="film" class="_link">FILM</p></div></a>
+        <a href="#" ><div class="hover_menu_item"><p id="bioskop" class="_link">BIOSKOP</p></div></a>
+        <a href="#" ><div class="hover_menu_item"><p id="datum" class="_link">DATUM</p></div></a>
+        <a href="#" ><div class="hover_menu_item"><p id="tehnologija" class="_link">TEHNIKA</p></div></a>
+        <span id ="kriterijum" ><i>Odaberite kriterijum pretrage projekcija</i></span>
+    </div>
+    <div class="main_menu">
+        <a href="index.jsp"><div class="main_menu_item"><p id="main_home" class="main_menu_link">HOME</p></div></a>
+        <a href="index.jsp"><div class="main_menu_item"><p id="main_film" class="main_menu_link">FILM</p></div></a>
+        <a href="index.jsp"><div class="main_menu_item"><p id="main_bioskop" class="main_menu_link">BIOSKOP</p></div></a>
+        <div class="main_menu_item"><p id="main_klub_index" class="main_menu_link">KLUB</p></div>
+        <a href="Registracija.jsp"><div class="main_menu_item"><p id="registracija" class="main_menu_link">SIGN IN</p></div></a>
+        <c:set var="userName" value="${sessionScope.user}"></c:set>     
+        <form name="logout" id="log_out" method="get" action="Login_servlet">
+        <c:choose>
+                <c:when test="${userName==null}">    
+                    <button id="log_out_div_i" class="main_menu_item main_menu_item_button" >LOGIN</button>          
+                </c:when>
+                <c:otherwise>   
+                    <button id="log_out_div_i" class="main_menu_item main_menu_item_button" type="submit">LOGOUT</button>            
+                </c:otherwise>
+        </c:choose>
+        </form>
+            
+        <c:choose>
+            <c:when test="${userName!=null}">
+                <a href="Korisnik.jsp"><div id="user_name_d" class="main_menu_item_user">
+                    <p id="user_name_p" class="main_menu_link_user">                       
+                        <c:out value="${userName}"></c:out>
+                    </p>
+                    </div>
+                </a>
+            </c:when>
+            <c:otherwise>
+                  <div id="user_name_d" class="main_menu_item_user">
+                      <p id="user_name_p" class="main_menu_link_user">GOST</p></div>
+            </c:otherwise>
+        </c:choose>
+    </div>
+</div>

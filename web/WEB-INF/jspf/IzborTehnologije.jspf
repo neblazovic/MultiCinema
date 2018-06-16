@@ -1,0 +1,20 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<sql:setDataSource var="bioskop"
+    driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/multiCinema"
+    user="root" password="" />
+<sql:query dataSource="${bioskop}"
+    sql="SELECT * FROM tehnologija " var="sveTehnologije" />
+<c:set var="filtrirane_tehnologije"></c:set>>
+        <div class="div_horizontal_teh">
+        <c:set var = "tehno" value="${requestScope.tehnologije}" ></c:set>
+
+                <c:forEach var="t" items="${tehno}">  
+                    <div class="div_vertical_teh">                     
+                        <img class="div_vertical_teh" id="${t.id_tehnologije}" src="${t.link}" alt="${t.naziv_tehnologije}"/>
+                        <input type="hidden" name="id_sale" value="${requestScope.idSaleTeh}"/>
+                    </div>
+                </c:forEach>
+        </div>

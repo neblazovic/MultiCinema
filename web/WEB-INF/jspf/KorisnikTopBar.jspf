@@ -1,0 +1,78 @@
+
+        
+<div class="top_bar">
+    <a href = "index.jsp"><div class="logo"></div></a>  
+    <div id="hover_menu_korisnik">
+        <p id="natpis_korisnik">Rezervacija karata</p>
+        <a href="#" id="klik_film" onclick="film_div()">           
+                <input type="hidden" name ="forma" value="1">
+                <div class="hover_menu_item">
+                    <p id="film" class="_link">FILM</p>
+                </div>      
+        </a>
+        <a href="#" id="klik_bioskop" onclick="bioskop_div()">
+            
+                <input type="hidden" name ="forma" value="2">
+                <div class="hover_menu_item">
+                    <p id="bioskop" class="_link">BIOSKOP</p>
+                </div>
+           
+        </a>
+        <a href="#"  id="klik_datum" onclick="datum_div()">
+                <input type="hidden" name ="forma" value="3">
+                <div class="hover_menu_item">
+                    <p id="datum" class="_link">DATUM</p>
+                </div>
+        </a>
+        <a href="#"  id="klik_tehnika" onclick="tehnika_div()">
+                <input type="hidden" name ="forma" value="4">
+                <div class="hover_menu_item">
+                    <p id="tehnologija" class="_link">TEHNIKA</p>
+                </div>
+        </a>
+        <span id ="kriterijum" >
+            <i>Odaberite kriterijum pretrage projekcija</i>
+        </span>
+    </div>
+    <div class="main_menu">
+            <div class="main_menu_item">
+                <p id="main_home_kor" class="main_menu_link">HOME</p>
+            </div>
+            <div class="main_menu_item">
+                <p id="main_film" class="main_menu_link">FILM</p>
+            </div>
+            <div class="main_menu_item">
+                <p id="main_bioskop" class="main_menu_link">BIOSKOP</p>
+            </div>
+            <div class="main_menu_item">
+                <p id="main_klub" class="main_menu_link">KLUB</p>
+            </div>
+        <a href="Registracija.jsp">
+            <div class="main_menu_item">
+                <p class="main_menu_link">SIGN IN</p>
+            </div>
+        </a>
+            
+    <c:set var="userName" value="${sessionScope.user}"></c:set> 
+    <form name="logout_korisnik" id="log_out_korisnik" method="get" action="Login_servlet">
+        <button id="log_out_div" class="main_menu_item main_menu_item_button" type="submit">LOGOUT</button>
+<!--                <p id="login_button_k" class="main_menu_link">LOGOUT</p>-->
+    </form>
+        <c:choose>
+            <c:when test="${userName!=null}">
+                <div id="user_name_d" class="main_menu_item_user">
+                    <p id="user_name_p" class="main_menu_link_user">
+                    <c:out value="${userName}"></c:out>
+                    </p>
+                </div>
+            </c:when>
+            <c:otherwise>
+                  <div id="user_name_d" class="main_menu_item_user">
+                      <p id="user_name_p" class="main_menu_link_user">
+                          GOST
+                      </p>
+                  </div>
+            </c:otherwise>
+        </c:choose>
+    </div>
+</div>

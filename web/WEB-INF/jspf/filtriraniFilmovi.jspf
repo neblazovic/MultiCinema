@@ -1,0 +1,37 @@
+
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<sql:setDataSource  var="bioskop"
+    driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/multiCinema"  
+        user="root" password="" />
+                <c:set var ="kolekcija" value="${requestScope.bioskopi}"></c:set>
+                <c:set var ="upit" value="SELECT * from film where idfilma in (select idfilma from projekcija where idbioskopa =5)"></c:set>
+                <c:set var ="bioskop_param" value="${requestScope.id_bioskopa}"></c:set>
+                <c:set var ="datum_param" value="${requestScope.id_datuma}"></c:set>
+                <c:set var ="teh_param" value="${requestScope.id_tehnike}"></c:set>
+            <c:choose>
+                <c:when test="${upit == null}">
+                    <sql:query dataSource="${bioskop}" 
+                        var="aktuelniFilmovi"
+                        sql="SELECT * FROM film">  
+                    </sql:query>    
+                </c:when>
+                <c:otherwise>
+                    <sql:query dataSource="${bioskop}" 
+                        var="aktuelniFilmovi"
+                        sql="${upit}">     
+                    </sql:query>
+                </c:otherwise>
+            </c:choose>
+
+            <div class="traka">        
+                <div class="filmskaTraka">          
+                    <c:forEach var="f" items="aktuelniFilmovi">
+                        <input type="hidden" name="id_filma${f.idfilma}" value="${f.idfilma}">                         
+                        <img class="poster_traka" id="${f.idfilma}" src="${f.link_postera}" alt="${f.nazivfilma}" style="margin-left: 2px;"/>
+                    </c:forEach>               
+                </div>        
+            </div>
+

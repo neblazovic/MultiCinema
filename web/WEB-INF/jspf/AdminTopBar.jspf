@@ -1,0 +1,23 @@
+   <body onload="loading()">
+        
+<div class="top_bar">
+    <a href = "index.jsp"><div class="logo"></div></a>  
+
+    <div class="main_menu">
+        <a href="Administracija_filmova.jsp"><div class="main_menu_item"><p id="main_home" class="main_menu_link_admin">HOME</p></div></a>
+      <a href="Administracija_filmova.jsp"><div id="menu_link_film" class="main_menu_item"><p class="main_menu_link_admin">FILMOVI</p></div></a>
+        <a href="Rezervacija.jsp"><div class="main_menu_item"><p class="main_menu_link_admin">BIOSKOPI</p></div></a>
+        <a href="Administracija_clanova.jsp"><div class="main_menu_item"><p class="main_menu_link_admin">CLANSTVO</p></div></a>
+    <c:set var="userName" value="${sessionScope.user}"></c:set>
+    
+            <form name="logout" id="log_out" method="get" action="Login_servlet">
+                    <button id="log_out_div_admin" class="main_menu_item main_menu_item_button" type="submit">LOGOUT</button>
+        </form>
+        <div id="user_name_d" class="main_menu_item_user">
+            <p id="user_name_p" class="main_menu_link_user">
+            <a href="Admin.jsp"><c:out value="${userName}"></c:out></a>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
