@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form method="post" action="Login_servlet">
+<table>
+    <th colspan="2">Login:</th>
+    <tr>
+        <td><label>Korisnicko ime:</label></td>
+        <td><input type="text" name="username" size="15"/></td>
+    </tr>
+    <tr>
+        <td><label>Lozinka:</label></td>
+        <td><input type="password" name="password" size="15"/></td>
+    </tr>
+    <tr>
+        <th><input type="submit" value="Uloguj se" /></th>
+        <th><input type="reset" value="Resetuj" /></th>
+    </tr>
+    <tr>
+        <th colspan="2"><a href="#">Zaboravili ste lozinku?</a></th></tr>
+        <%!String poruka;%>
+         <%poruka=(String)request.getAttribute("poruka");
+         if(poruka!=null){%>
+     <tr>                            
+        <td colspan="2" style="text-align: center; color:red;"><%=poruka%></td>
+    </tr> 
+    <%}%>
+</table>
+</form>
+    </body>
+</html>

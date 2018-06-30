@@ -34,7 +34,7 @@
                         </tr>             
                         <tr>
                             <td>
-                              *  Ime:
+                                Ime:
                             </td>
                             <td>
                                 <input type="text" name="ime" size="20">
@@ -42,7 +42,7 @@
                         </tr>
                         <tr>
                             <td>
-                              *  Prezime:
+                                Prezime:
                             </td>
                             <td>
                                 <input type="text" name="prezime" size="20">
@@ -50,7 +50,7 @@
                         </tr>
                         <tr>
                             <td>
-                              *  Korisnicko ime:
+                                Korisnicko ime:
                             </td>
                             <td>
                                 <input type="text" name="username" size="20">
@@ -58,7 +58,7 @@
                         </tr>
                         <tr>
                             <td>
-                              *  Lozinka:
+                                Lozinka:
                             </td>
                             <td>
                                 <input type="password" name="pass" size="20">
@@ -82,7 +82,7 @@
                         </tr>
                         <tr>
                             <td>
-                              *  E mail:
+                                E mail:
                             </td>
                             <td>
                                 <input type="text" name="email" size="20">

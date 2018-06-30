@@ -1,0 +1,12 @@
+
+<%@ page pageEncoding="UTF-8" %>       
+    <div id="side_bar">
+        <div id="side_menu">
+            <form name ="svi_bioskopi" action="Svi_bioskopi_servlet" method="get">
+                <a href="#"><div class="side_menu_item"><p class="side_menu_item_link">BG</p></div></a>
+                <a href="#"><div class="side_menu_item"><p class="side_menu_item_link">KG</p></div></a>
+                <a href="#"><div class="side_menu_item"><p class="side_menu_item_link">NS</p></div></a>
+                <a href="#"><div class="side_menu_item"><p class="side_menu_item_link">NI</p></div></a>
+            </form>
+        </div>
+    </div>

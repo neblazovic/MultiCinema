@@ -88,7 +88,7 @@ public class AdministracijaClanovaServlet extends HttpServlet {
                 request.getRequestDispatcher("Administracija_clanova.jsp").forward(request, response);
             }
             else{
-                request.setAttribute("uspeh", "Svi podaci sa zvezdicom moraju biti uneti!!!");
+                request.setAttribute("uspeh", "Svi podaci moraju biti uneti!!!");
                 request.getRequestDispatcher("Administracija_clanova.jsp").forward(request, response);
             }
     }

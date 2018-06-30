@@ -1,0 +1,26 @@
+
+    <form method="post" action="Login_servlet">
+    <table>
+        <th colspan="2">Login:</th>
+        <tr>
+            <td><label>Korisnicko ime:</label></td>
+            <td><input type="text" name="username" size="15"/></td>
+        </tr>
+        <tr>
+            <td><label>Lozinka:</label></td>
+            <td><input type="password" name="password" size="15"/></td>
+        </tr>
+        <tr>
+            <th><input type="submit" value="Uloguj se" /></th>
+            <th><input type="reset" value="Resetuj" /></th>
+        </tr>
+        <tr ><th colspan="2"><a href="#">Zaboravili ste lozinku?</a></th></tr>
+            <%!String poruka;%>
+             <%poruka=(String)request.getAttribute("poruka");
+             if(poruka!=null){%>
+         <tr>                            
+            <td colspan="2" style="text-align: center; color:red;"><%=poruka%></td>
+        </tr> 
+        <%}%>
+    </table>
+    </form>

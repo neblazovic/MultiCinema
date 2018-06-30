@@ -73,7 +73,7 @@
                         </div>
                     <div id="popupClan"><span>Cestitamo!!!<br><br> <b><c:out value="${sessionScope.user}"></c:out></b> , uspesno ste se uclanili. 
                 Postali ste clan kluba <c:out value="${requestScope.uspeh}"></c:out><br>
-            Hvala Vam sto ste koristili nas online servis.</span><br><p>Kliknite na poruku ili sacekajte 10 sekundi!!</p>
+            Hvala Vam sto ste koristili nas online servis.</span><br><p>Kliknite na poruku ili sacekajte <span id="timeClan"></span> sekundi!!</p>
                 </div>
                     <div id="popupPostoji">
                         <span>Vi ste vec clan kluba sa brojem kartice <c:out value="${sessionScope.klupska}"></c:out>.</span><br><br> <span>Mozete biti clan samo jednog kluba.</span><br><p>Kliknite na poruku ili sacekajte 10 sekundi!!</p>          
